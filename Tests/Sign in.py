@@ -25,7 +25,7 @@ class Logintests(unittest.TestCase):
         lp.setUsername(locators.username1)
         lp.setPassword(locators.password2)
         lp.setSubmit()
-        time.sleep(3)
+        time.sleep(4)
         lp.setLogout()
 
     @classmethod
@@ -36,4 +36,3 @@ class Logintests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
