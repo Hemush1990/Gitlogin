@@ -1,7 +1,9 @@
 from selenium.webdriver.common.by import By
 from Values import locators
-class Loginpage():
-    login = "//input[@type='text' and @name = 'login']"
+from Pages.Basescreen import BaseScreen
+
+class Loginpage(BaseScreen):
+    login = "login_field"
     password = "//input[@type='password' and @name = 'password']"
     submit = "//input[@type='submit' and @name = 'commit']"
     logout = "//*[@class ='Header-link'] //*[@alt = '@Hemush1990']"
@@ -10,11 +12,13 @@ class Loginpage():
         self.driver = driver
 
     def setUsername(self, username):
-        self.driver.find_element(By.XPATH, self.login).is_enabled()
+        self.presence_of_element_located(self.driver.find_element(By.ID, self.login).is_enabled())
         self.driver.find_element(By.XPATH, self.login).send_keys(username)
+        print(self.driver.current_window_handle)
+        self.driver.window_handles
 
     def setPassword(self, password):
-        self.driver.find_element(By.XPATH, self.password).is_enabled()
+        self.select_element(self.driver.find_element(By.XPATH, self.password).is_enabled())
         self.driver.find_element(By.XPATH, self.password).send_keys(password)
 
     def setSubmit(self):

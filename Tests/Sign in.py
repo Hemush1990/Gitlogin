@@ -7,7 +7,7 @@ from Values import locators
 
 class Logintests(unittest.TestCase):
     base_url = 'https://github.com/'
-    driver = webdriver.Chrome(executable_path='//Users/hemush/Downloads/chromedriver')
+    driver = webdriver.Chrome()
 
     @classmethod
     def setUpClass(cls):
